@@ -1,0 +1,6 @@
+{
+  "name": "Primo Corporate Website",
+  "description": "A premium, high-contrast, professional industrial website for Primo, engineered for trust, clarity, and business enquiries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
