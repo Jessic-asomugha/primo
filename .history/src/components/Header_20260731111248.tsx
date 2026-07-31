@@ -41,8 +41,8 @@ export default function Header({ currentView, setView }: HeaderProps) {
             <div className="w-4 h-4 border-2 border-white transform rotate-45"></div>
           </div>
           <div>
-            <span className="text-display block text-sm sm:text-base font-extrabold tracking-tight text-slate-900 uppercase leading-tight">
-              CAPELLA INTEGRATED<br />GLOBAL LIMITED
+            <span className="text-display block text-lg font-extrabold tracking-tight text-slate-900 uppercase">
+              CAPELLA
             </span>
           </div>
         </button>
