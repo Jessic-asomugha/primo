@@ -396,72 +396,112 @@ export default function HomeView({ setView }: HomeViewProps) {
       <section className="py-24 bg-white border-b border-slate-100">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           
-          <div className="flex flex-col gap-6 mb-12">
-            <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-orange font-bold">
-              // SEGMENT DIRECTORY
-            </span>
-            <h2 className="text-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
-              Who We Serve: Powering Critical Abuja Operations
-            </h2>
-            <p className="text-slate-500 text-sm leading-relaxed font-light max-w-3xl">
-              Our operations guarantee high-purity fuel delivery for four core pillars of commercial stability in the Federal Capital Territory. We adapt strictly to your mechanical setup.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            
+            {/* Left side: details */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-orange font-bold">
+                // SEGMENT DIRECTORY
+              </span>
+              <h2 className="text-display text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+                Who We Serve: Powering Critical Abuja Operations
+              </h2>
+              <p className="text-slate-500 text-sm leading-relaxed font-light">
+                Our operations guarantee high-purity fuel delivery for four core pillars of commercial stability in the Federal Capital Territory. We adapt strictly to your mechanical setup.
+              </p>
 
-          <div className="flex flex-col gap-4">
-            {SECTORS.map((sector) => {
-              let IconComponent = Building2;
-              if (sector.id === 'sec-1') IconComponent = Activity;
-              if (sector.id === 'sec-3') IconComponent = Container;
-              if (sector.id === 'sec-4') IconComponent = Wrench;
+              <div className="flex flex-col gap-4 mt-2">
+                {SECTORS.map((sector) => {
+                  let IconComponent = Building2;
+                  if (sector.id === 'sec-1') IconComponent = Activity;
+                  if (sector.id === 'sec-3') IconComponent = Container;
+                  if (sector.id === 'sec-4') IconComponent = Wrench;
 
-              const isExpanded = expandedSectorId === sector.id;
-
-              return (
-                <div key={sector.id} className="border border-slate-200 rounded-lg overflow-hidden">
-                  <button
-                    onClick={() => setExpandedSectorId(isExpanded ? null : sector.id)}
-                    className="w-full flex gap-4 p-5 bg-slate-50 hover:bg-slate-100/50 transition-all duration-200 text-left"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-slate-950 text-white">
-                      <IconComponent className="h-5 w-5 text-brand-orange" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between">
+                  return (
+                    <div key={sector.id} className="flex gap-4 p-5 rounded-md bg-slate-50 border-l-4 border-slate-950 hover:border-brand-orange hover:bg-slate-100/50 transition-all duration-200">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-slate-950 text-white">
+                        <IconComponent className="h-5 w-5 text-brand-orange" />
+                      </div>
+                      <div>
                         <h4 className="text-sm font-bold text-slate-900">{sector.title}</h4>
-                        <span className="text-brand-orange transition-transform duration-200">
-                          {isExpanded ? '−' : '+'}
-                        </span>
-                      </div>
-                      <p className="text-xs text-slate-500 mt-1 leading-relaxed font-light">{sector.description}</p>
-                    </div>
-                  </button>
-
-                  {isExpanded && (
-                    <div className="border-t border-slate-200 p-6 bg-white animate-fade-in">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h5 className="text-sm font-bold text-slate-900 mb-3">About {sector.title}</h5>
-                          <p className="text-xs text-slate-600 leading-relaxed font-light">
-                            {sector.fullDescription}
-                          </p>
+                        <p className="text-xs text-slate-500 mt-1 leading-relaxed font-light">{sector.description}</p>
+                        <div className="text-[10px] text-brand-orange font-mono font-semibold uppercase tracking-wider mt-2 flex items-center gap-1.5">
+                          <span className="h-1 w-1 bg-brand-orange rounded-full" />
+                          {sector.marketShare}
                         </div>
-                        {sector.image && (
-                          <div className="relative h-48 md:h-56 rounded-lg overflow-hidden">
-                            <img
-                              src={sector.image}
-                              alt={sector.title}
-                              className="w-full h-full object-cover"
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
-                        )}
                       </div>
                     </div>
-                  )}
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right side: Detailed visuals representing fuel tanks & tanker delivery */}
+            <div className="lg:col-span-7 relative">
+              <div className="aspect-4/3 overflow-hidden rounded shadow-2xl bg-slate-950 relative group border border-slate-800">
+                {/* We'll use a stylized vector dashboard illustration representing dynamic dispatch flow */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-between z-10 text-white bg-slate-950/80">
+                  <div className="flex justify-between items-start border-b border-slate-800 pb-4">
+                    <div>
+                      <span className="text-[9px] font-mono text-slate-400 uppercase tracking-widest block">STUTTGART / ABUJA GATEWAY</span>
+                      <h3 className="font-extrabold text-lg text-white">Digital Dispatch &amp; Volume Control</h3>
+                    </div>
+                    <span className="text-[10px] font-mono text-brand-orange bg-slate-900 border border-brand-orange/30 px-2 py-1 rounded">
+                      ACTIVE LINK
+                    </span>
+                  </div>
+
+                  {/* Interconnected supply lines mockup in SVG */}
+                  <div className="h-32 flex items-center justify-center relative">
+                    <svg className="absolute inset-0 w-full h-full opacity-45" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 150">
+                      <path d="M 10,75 Q 100,20 200,75 T 390,75" stroke="#f59e0b" strokeWidth="2" fill="none" strokeDasharray="5 5" />
+                      <circle cx="200" cy="75" r="30" stroke="#f59e0b" strokeWidth="1" fill="none" />
+                      <circle cx="200" cy="75" r="4" fill="#f59e0b" />
+                      <path d="M 50,120 L 350,120" stroke="#475569" strokeWidth="1" fill="none" />
+                      <line x1="200" y1="20" x2="200" y2="130" stroke="#334155" strokeWidth="1" strokeDasharray="3 3" />
+                    </svg>
+                    
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="h-3 w-3 bg-slate-700 rounded-full mb-1" />
+                      <span className="text-[8px] font-mono text-slate-400">DEP_CENTRAL</span>
+                    </div>
+
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col items-center">
+                      <div className="h-3 w-3 bg-brand-orange rounded-full mb-1 animate-ping" />
+                      <span className="text-[8px] font-mono text-brand-orange font-bold">CLIENT_DISCHARGE</span>
+                    </div>
+
+                    <div className="bg-slate-900/90 border border-slate-800 p-3 rounded shadow-lg text-center max-w-[180px] z-20">
+                      <span className="text-[8px] font-mono text-slate-500 block">PUMPING COEFFICIENT</span>
+                      <span className="text-xs font-mono font-extrabold text-white">998.4 LTR / MIN</span>
+                      <div className="h-1 bg-slate-800 rounded-full mt-1.5 overflow-hidden">
+                        <div className="h-full bg-emerald-400 rounded-full" style={{ width: '85%' }} />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-slate-800 pt-4 flex justify-between text-[9px] font-mono text-slate-400">
+                    <div>
+                      SYSTEM STATUS: <span className="text-emerald-400 font-bold">SECURE DISPATCH</span>
+                    </div>
+                    <div>
+                      TRANSIT LOCK: <span className="text-white">ENCRYPTED</span>
+                    </div>
+                  </div>
                 </div>
-              );
-            })}
+
+                <img
+                  src={ASSETS.whoWeServe}
+                  alt="Industrial Fuel Tanks"
+                  className="w-full h-full object-cover opacity-20 group-hover:scale-105 transition-transform duration-700"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              {/* Offset border */}
+              <div className="absolute -bottom-4 -right-4 h-full w-full border border-slate-200 rounded -z-10 hidden sm:block" />
+            </div>
+
           </div>
         </div>
       </section>

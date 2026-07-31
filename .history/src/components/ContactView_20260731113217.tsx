@@ -227,26 +227,40 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                       </p>
                     </div>
 
-                    {/* Message Receipt Card */}
+                    {/* Highly Refined Technical Ticket Card */}
                     <div className="w-full bg-white border border-slate-200 rounded p-6 text-left text-xs flex flex-col gap-4 mt-2 shadow-inner font-light">
                       <div className="flex justify-between items-center border-b border-slate-100 pb-3">
-                        <span className="text-slate-400 font-mono uppercase tracking-widest text-[9px]">Message ID</span>
+                        <span className="text-slate-400 font-mono uppercase tracking-widest text-[9px]">Receipt Token ID</span>
                         <span className="font-mono text-slate-950 font-bold text-[11px]">{successSubmission.id}</span>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-6">
                         <div>
-                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Name</span>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Contact Officer</span>
                           <span className="font-bold text-slate-900 block mt-1">{successSubmission.name}</span>
                         </div>
                         <div>
-                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Email</span>
-                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.email}</span>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Organization / Estate</span>
+                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.company || "Individual Client"}</span>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-6 border-t border-slate-50 pt-3">
+                        <div>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Service Logistics Group</span>
+                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.serviceInterest}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Dispatch Priority</span>
+                          <span className="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-wider bg-orange-50 text-brand-orange font-bold px-2 py-0.5 rounded mt-1 border border-brand-orange/10">
+                            <span className="h-1 w-1 rounded-full bg-brand-orange animate-pulse" />
+                            Priority SLA (4H)
+                          </span>
                         </div>
                       </div>
 
                       <div className="border-t border-slate-100 pt-4">
-                        <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Message</span>
+                        <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Operations Details</span>
                         <p className="text-slate-600 mt-2 italic leading-relaxed text-[11px] font-normal bg-slate-50 p-3 rounded border border-slate-100">
                           &quot;{successSubmission.message}&quot;
                         </p>
@@ -267,10 +281,10 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                     
                     <div>
                       <h3 className="text-display text-lg font-extrabold text-slate-900">
-                        Send Us a Message
+                        Fuel Specifications Inquiry Form
                       </h3>
                       <p className="text-slate-500 text-xs mt-1 leading-relaxed font-light">
-                        Fill out the form below and we'll get back to you as soon as possible.
+                        Please supply operational parameters below. Fields marked with asterisk (*) are required for queue authorization.
                       </p>
                     </div>
 
@@ -285,7 +299,7 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider flex items-center justify-between" htmlFor="input-name">
-                          <span>[01] Your Name *</span>
+                          <span>[01] Full Name *</span>
                         </label>
                         <div className="relative">
                           <User className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -303,7 +317,7 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
 
                       <div className="flex flex-col gap-2">
                         <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-email">
-                          [02] Your Email *
+                          [02] Email Address *
                         </label>
                         <div className="relative">
                           <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
@@ -313,35 +327,72 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            placeholder="e.g. a.benson@email.com"
+                            placeholder="e.g. a.benson@abujaspecialist.org"
                             className="w-full text-xs rounded border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
                           />
                         </div>
                       </div>
                     </div>
 
-                    {/* Inputs Row 2: Subject */}
-                    <div className="flex flex-col gap-2">
-                      <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-subject">
-                        [03] Subject
-                      </label>
-                      <div className="relative">
-                        <MessageSquare className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                        <input
-                          id="input-subject"
-                          type="text"
-                          value={subject}
-                          onChange={(e) => setSubject(e.target.value)}
-                          placeholder="e.g. General Inquiry"
-                          className="w-full text-xs rounded border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
-                        />
+                    {/* Inputs Row 2: Company and Phone */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                      <div className="flex flex-col gap-2">
+                        <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-company">
+                          [03] Company / Estate Name
+                        </label>
+                        <div className="relative">
+                          <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                          <input
+                            id="input-company"
+                            type="text"
+                            value={company}
+                            onChange={(e) => setCompany(e.target.value)}
+                            placeholder="e.g. Abuja National Specialist Hospital"
+                            className="w-full text-xs rounded border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-phone">
+                          [04] Phone Number
+                        </label>
+                        <div className="relative">
+                          <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+                          <input
+                            id="input-phone"
+                            type="text"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            placeholder="e.g. +234 803 123 4567"
+                            className="w-full text-xs rounded border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange"
+                          />
+                        </div>
                       </div>
                     </div>
 
-                    {/* Inputs Row 3: Message */}
+                    {/* Inputs Row 3: Service interest dropdown */}
+                    <div className="flex flex-col gap-2">
+                      <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-service">
+                        [05] Specific Logistics Interest
+                      </label>
+                      <select
+                        id="input-service"
+                        value={serviceInterest}
+                        onChange={(e) => setServiceInterest(e.target.value)}
+                        className="w-full text-xs rounded border border-slate-200 bg-white p-3.5 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange cursor-pointer"
+                      >
+                        <option value="General Inquiry">General Corporate / Tender Inquiry</option>
+                        {SERVICES.map((srv) => (
+                          <option key={srv.id} value={srv.title}>{srv.title} ({srv.category})</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* Inputs Row 4: Message text */}
                     <div className="flex flex-col gap-2">
                       <label className="text-slate-700 text-[10px] font-mono font-bold uppercase tracking-wider" htmlFor="input-message">
-                        [04] Your Message *
+                        [06] Volume Parameters &amp; Delivery Specifications *
                       </label>
                       <div className="relative">
                         <MessageSquare className="absolute left-3.5 top-4 h-4 w-4 text-slate-400" />
@@ -351,7 +402,7 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                           onChange={(e) => setMessage(e.target.value)}
                           required
                           rows={6}
-                          placeholder="Write your message here..."
+                          placeholder="Please supply details of your fuel storage tank capacities, generator parameters (e.g. Cummins, Perkins), monthly consumption estimate, and key delivery coordinates or scheduling preferences..."
                           className="w-full text-xs rounded border border-slate-200 bg-white py-3.5 pl-10 pr-4 text-slate-900 focus:border-brand-orange focus:outline-none focus:ring-1 focus:ring-brand-orange font-light"
                         />
                       </div>
@@ -365,7 +416,7 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                       }`}
                       id="btn-form-submit"
                     >
-                      {submitting ? 'Sending...' : 'Send Message'}
+                      {submitting ? 'Transmitting parameters...' : 'Transmit Fuel Brief'}
                       <Send className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                     </button>
 

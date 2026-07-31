@@ -11,7 +11,6 @@ import HomeView from './components/HomeView';
 import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import ContactView from './components/ContactView';
-import EnquiryView from './components/EnquiryView';
 
 export default function App() {
   const [currentView, setView] = useState<ActiveView>(ActiveView.HOME);
@@ -34,12 +33,13 @@ export default function App() {
       case ActiveView.CONTACT:
         return (
           <ContactView 
+            mode="contact"
             selectedServiceInquiry={selectedServiceInquiry} 
             setSelectedServiceInquiry={setSelectedServiceInquiry} 
           />
         );
       case ActiveView.ENQUIRY:
-        return <EnquiryView selectedServiceInquiry={selectedServiceInquiry} setSelectedServiceInquiry={setSelectedServiceInquiry} />;
+        return <ContactView mode="enquiry" selectedServiceInquiry={selectedServiceInquiry} setSelectedServiceInquiry={setSelectedServiceInquiry} />;
       default:
         return <HomeView setView={setView} />;
     }

@@ -65,6 +65,4 @@ export interface SectorItem {
   description: string;
   marketShare: string;
   iconName: string;
-  fullDescription?: string;
-  image?: string;
 }

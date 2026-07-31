@@ -34,12 +34,13 @@ export default function App() {
       case ActiveView.CONTACT:
         return (
           <ContactView 
+            mode="contact"
             selectedServiceInquiry={selectedServiceInquiry} 
             setSelectedServiceInquiry={setSelectedServiceInquiry} 
           />
         );
       case ActiveView.ENQUIRY:
-        return <EnquiryView selectedServiceInquiry={selectedServiceInquiry} setSelectedServiceInquiry={setSelectedServiceInquiry} />;
+        return <ContactView mode="enquiry" selectedServiceInquiry={selectedServiceInquiry} setSelectedServiceInquiry={setSelectedServiceInquiry} />;
       default:
         return <HomeView setView={setView} />;
     }

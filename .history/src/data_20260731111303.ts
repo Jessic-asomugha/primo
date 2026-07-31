@@ -10,42 +10,10 @@ export const COMPANY = {
 };
 export const ASSETS = { hero: heroImage, whoWeServe: serveImage, featuredService: serviceImage, telemetry: telemetryImage };
 export const SECTORS: SectorItem[] = [
-  { 
-    id: 'sec-1', 
-    title: 'Oil & Gas', 
-    description: 'Integrated business solutions for organisations in the oil and gas sector.', 
-    marketShare: 'Industries served', 
-    iconName: 'Activity',
-    fullDescription: 'We serve oil and gas industries with comprehensive fuel logistics solutions, ensuring reliable diesel supply for drilling operations, refineries, and offshore facilities. Our emergency delivery capabilities keep your operations running 24/7.',
-    image: serveImage
-  },
-  { 
-    id: 'sec-2', 
-    title: 'Construction & Manufacturing', 
-    description: 'Support for construction companies and manufacturing industries.', 
-    marketShare: 'Industries served', 
-    iconName: 'Building2',
-    fullDescription: 'Construction and manufacturing sectors rely on our bulk diesel supply to power heavy machinery, generators, and equipment. We provide scheduled deliveries and emergency backup to prevent costly downtime on critical projects.',
-    image: heroImage
-  },
-  { 
-    id: 'sec-3', 
-    title: 'Public & Institutional', 
-    description: 'Support for government agencies, hospitals, schools and universities.', 
-    marketShare: 'Industries served', 
-    iconName: 'Container',
-    fullDescription: 'Public institutions and government agencies trust Capella for consistent fuel supply to power essential services. From hospitals requiring backup generator fuel to universities maintaining campus operations, we ensure uninterrupted energy access.',
-    image: serviceImage
-  },
-  { 
-    id: 'sec-4', 
-    title: 'Commercial & Community', 
-    description: 'Support for hotels, estates, banks, restaurants, churches and other businesses.', 
-    marketShare: 'Industries served', 
-    iconName: 'Wrench',
-    fullDescription: 'Commercial establishments and community businesses depend on reliable fuel for generators, vehicles, and operations. We serve hotels, estates, banks, restaurants, and religious institutions with tailored delivery schedules and competitive pricing.',
-    image: telemetryImage
-  },
+  { id: 'sec-1', title: 'Oil & Gas', description: 'Integrated business solutions for organisations in the oil and gas sector.', marketShare: 'Industries served', iconName: 'Activity' },
+  { id: 'sec-2', title: 'Construction & Manufacturing', description: 'Support for construction companies and manufacturing industries.', marketShare: 'Industries served', iconName: 'Building2' },
+  { id: 'sec-3', title: 'Public & Institutional', description: 'Support for government agencies, hospitals, schools and universities.', marketShare: 'Industries served', iconName: 'Container' },
+  { id: 'sec-4', title: 'Commercial & Community', description: 'Support for hotels, estates, banks, restaurants, churches and other businesses.', marketShare: 'Industries served', iconName: 'Wrench' },
 ];
 export const SERVICES: Service[] = [{
   id: 'srv-1', title: 'Diesel Supply', slug: 'diesel-supply', category: 'Service Details Pending',

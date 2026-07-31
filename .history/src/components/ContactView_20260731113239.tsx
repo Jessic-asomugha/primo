@@ -227,26 +227,40 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
                       </p>
                     </div>
 
-                    {/* Message Receipt Card */}
+                    {/* Highly Refined Technical Ticket Card */}
                     <div className="w-full bg-white border border-slate-200 rounded p-6 text-left text-xs flex flex-col gap-4 mt-2 shadow-inner font-light">
                       <div className="flex justify-between items-center border-b border-slate-100 pb-3">
-                        <span className="text-slate-400 font-mono uppercase tracking-widest text-[9px]">Message ID</span>
+                        <span className="text-slate-400 font-mono uppercase tracking-widest text-[9px]">Receipt Token ID</span>
                         <span className="font-mono text-slate-950 font-bold text-[11px]">{successSubmission.id}</span>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-6">
                         <div>
-                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Name</span>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Contact Officer</span>
                           <span className="font-bold text-slate-900 block mt-1">{successSubmission.name}</span>
                         </div>
                         <div>
-                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Email</span>
-                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.email}</span>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Organization / Estate</span>
+                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.company || "Individual Client"}</span>
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-6 border-t border-slate-50 pt-3">
+                        <div>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Service Logistics Group</span>
+                          <span className="font-bold text-slate-900 block mt-1">{successSubmission.serviceInterest}</span>
+                        </div>
+                        <div>
+                          <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Dispatch Priority</span>
+                          <span className="inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-wider bg-orange-50 text-brand-orange font-bold px-2 py-0.5 rounded mt-1 border border-brand-orange/10">
+                            <span className="h-1 w-1 rounded-full bg-brand-orange animate-pulse" />
+                            Priority SLA (4H)
+                          </span>
                         </div>
                       </div>
 
                       <div className="border-t border-slate-100 pt-4">
-                        <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Message</span>
+                        <span className="text-slate-400 block text-[9px] uppercase tracking-wider font-mono">Operations Details</span>
                         <p className="text-slate-600 mt-2 italic leading-relaxed text-[11px] font-normal bg-slate-50 p-3 rounded border border-slate-100">
                           &quot;{successSubmission.message}&quot;
                         </p>
