@@ -1,39 +1,37 @@
-export const COMPANY = {
-  name: 'Capella Integrated Global Limited',
-  tagline: 'Integrated Solutions. Trusted Results.',
-  yearEstablished: 2024,
-  address: 'Plot 471, behind Banilux Motors, FCT, Abuja',
-  phones: ['07062062322', '09048486637'],
-  email: 'info@capella.com.ng',
-  about: [
-    'Capella Integrated Global Limited is a diversified Nigerian company providing integrated business solutions across the oil and gas, procurement, logistics, engineering, construction support, and general contracting sectors.',
-    'We deliver innovative, efficient, and cost-effective solutions tailored to meet the unique needs of corporate organisations, government institutions, and private businesses.',
-  ],
-  mission: 'To deliver innovative business solutions that exceed customer expectations.',
-  vision: "To become Nigeria's most trusted integrated services company.",
-  values: ['Integrity', 'Professionalism', 'Innovation', 'Quality', 'Teamwork', 'Safety'],
-  credibility: [
-    'Registered Nigerian Company',
-    'Experienced management',
-    'Professional workforce',
-    'Reliable logistics',
-    'Competitive pricing',
-    'Customer-focused service',
-  ],
-  whyChooseUs: 'Capella Integrated Global delivers complete business solutions backed by professionalism, integrity, and timely execution. Our focus is building lasting relationships through quality service and dependable performance.',
-  industries: [
-    'Oil & Gas', 'Construction Companies', 'Manufacturing Industries', 'Hotels', 'Hospitals',
-    'Schools & Universities', 'Government Agencies', 'Telecommunications', 'Logistics Companies',
-    'Estates', 'Supermarkets', 'Shopping Malls', 'Churches', 'Banks', 'Restaurants',
-    'Agricultural Companies', 'Mining Companies',
-  ],
-  areas: ['Abuja (FCT)', 'Kaduna', 'Nasarawa', 'Niger State', 'Kogi'],
-  hours: ['Monday – Friday: 8:00 AM – 6:00 PM', 'Saturday: 9:00 AM – 4:00 PM'],
-};
+import { Service, Testimonial, FAQItem, ValueItem, SectorItem } from './types';
+import heroImage from './assets/images/primo_hero_industrial_1784470497336.jpg';
+import serveImage from './assets/images/primo_who_we_serve_1784470511197.jpg';
+import serviceImage from './assets/images/primo_featured_service_1784470522808.jpg';
+import telemetryImage from './assets/images/primo_logistics_telemetry_1784478598465.jpg';
 
-export const SERVICES = [
-  {
-    title: 'Diesel Supply',
-    description: 'Service details, specifications, and suitability information are pending confirmation from the client.',
-  },
+export const COMPANY = {
+  name: 'Capella Integrated Global Limited', tagline: 'Integrated Solutions. Trusted Results.', yearEstablished: 2024,
+  address: 'Plot 471, behind Banilux Motors, FCT, Abuja', phones: ['07062062322', '09048486637'], email: 'info@capella.com.ng',
+};
+export const ASSETS = { hero: heroImage, whoWeServe: serveImage, featuredService: serviceImage, telemetry: telemetryImage };
+export const SECTORS: SectorItem[] = [
+  { id: 'sec-1', title: 'Oil & Gas', description: 'Integrated business solutions for organisations in the oil and gas sector.', marketShare: 'Industries served', iconName: 'Activity' },
+  { id: 'sec-2', title: 'Construction & Manufacturing', description: 'Support for construction companies and manufacturing industries.', marketShare: 'Industries served', iconName: 'Building2' },
+  { id: 'sec-3', title: 'Public & Institutional', description: 'Support for government agencies, hospitals, schools and universities.', marketShare: 'Industries served', iconName: 'Container' },
+  { id: 'sec-4', title: 'Commercial & Community', description: 'Support for hotels, estates, banks, restaurants, churches and other businesses.', marketShare: 'Industries served', iconName: 'Wrench' },
+];
+export const SERVICES: Service[] = [{
+  id: 'srv-1', title: 'Diesel Supply', slug: 'diesel-supply', category: 'Service Details Pending',
+  shortDescription: 'Diesel Supply is currently the only listed service. Detailed requirements and availability information are pending client confirmation.',
+  fullDescription: 'Contact Capella Integrated Global Limited to discuss your requirements. Service description, specifications, and best-fit information will be published once confirmed by the client.',
+  specifications: ['Service description pending client confirmation', 'Availability details pending client confirmation', 'Best-fit information pending client confirmation'],
+  features: ['Registered Nigerian Company', 'Professional workforce', 'Reliable logistics', 'Customer-focused service'], iconName: 'Container',
+}];
+export const TESTIMONIALS: Testimonial[] = [{ id: 't-1', quote: 'Capella Integrated Global delivers complete business solutions backed by professionalism, integrity, and timely execution.', author: 'Capella Integrated Global Limited', role: 'Our commitment', company: 'Integrated Solutions. Trusted Results.', rating: 5 }];
+export const VALUES: ValueItem[] = [
+  { id: 'val-1', title: 'Integrity', description: 'We act with integrity in every engagement.', iconName: 'ShieldCheck' },
+  { id: 'val-2', title: 'Professionalism', description: 'We provide professional support tailored to client needs.', iconName: 'Target' },
+  { id: 'val-3', title: 'Innovation', description: 'We deliver innovative business solutions.', iconName: 'Award' },
+  { id: 'val-4', title: 'Quality', description: 'We focus on quality service and dependable performance.', iconName: 'TrendingUp' },
+];
+export const FAQS: FAQItem[] = [
+  { id: 'faq-1', question: 'What does Capella Integrated Global Limited do?', answer: 'We provide integrated business solutions across oil and gas, procurement, logistics, engineering, construction support, and general contracting.', category: 'About Capella' },
+  { id: 'faq-2', question: 'Who do you serve?', answer: 'We serve corporate organisations, government institutions, and private businesses across a range of industries.', category: 'Industries' },
+  { id: 'faq-3', question: 'Which areas do you cover?', answer: 'Our areas covered are Abuja (FCT), Kaduna, Nasarawa, Niger State, and Kogi.', category: 'Coverage' },
+  { id: 'faq-4', question: 'Are international partnerships available?', answer: 'International partnerships are available upon request.', category: 'Partnerships' },
 ];
