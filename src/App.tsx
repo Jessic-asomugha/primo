@@ -1,9 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ActiveView } from './types';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,54 +6,26 @@ import HomeView from './components/HomeView';
 import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import ContactView from './components/ContactView';
-import AdminInboxView from './components/AdminInboxView';
 
 export default function App() {
   const [currentView, setView] = useState<ActiveView>(ActiveView.HOME);
-  const [selectedServiceInquiry, setSelectedServiceInquiry] = useState<string>('');
 
-  // Scroll to top on view changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' as any });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [currentView]);
 
-  // View dispatcher
-  const renderView = () => {
-    switch (currentView) {
-      case ActiveView.HOME:
-        return <HomeView setView={setView} />;
-      case ActiveView.ABOUT:
-        return <AboutView setView={setView} />;
-      case ActiveView.SERVICES:
-        return <ServicesView setView={setView} setSelectedServiceInquiry={setSelectedServiceInquiry} />;
-      case ActiveView.CONTACT:
-        return (
-          <ContactView 
-            selectedServiceInquiry={selectedServiceInquiry} 
-            setSelectedServiceInquiry={setSelectedServiceInquiry} 
-          />
-        );
-      case ActiveView.ADMIN_INBOX:
-        return <AdminInboxView />;
-      default:
-        return <HomeView setView={setView} />;
-    }
+  const views = {
+    [ActiveView.HOME]: <HomeView setView={setView} />,
+    [ActiveView.ABOUT]: <AboutView setView={setView} />,
+    [ActiveView.SERVICES]: <ServicesView setView={setView} />,
+    [ActiveView.CONTACT]: <ContactView />,
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
-      
-      {/* Header element */}
+    <div className="min-h-screen bg-white text-brand-900">
       <Header currentView={currentView} setView={setView} />
-
-      {/* Main view container */}
-      <main className="flex-grow">
-        {renderView()}
-      </main>
-
-      {/* Footer element */}
-      <Footer setView={setView} currentView={currentView} />
-
+      <main>{views[currentView]}</main>
+      <Footer setView={setView} />
     </div>
   );
 }

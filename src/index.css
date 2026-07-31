@@ -6,16 +6,8 @@
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  /* Custom Corporate Industrial Theme - Professional Polish Theme */
-  --color-brand-900: #0f172a; /* slate-900 */
-  --color-brand-850: #1e293b; /* slate-800 */
-  --color-brand-800: #1e293b;
-  --color-brand-700: #334155; /* slate-700 */
-  --color-brand-600: #475569; /* slate-600 */
-  --color-brand-100: #f1f5f9; /* slate-100 */
-  --color-brand-50: #f8fafc;  /* slate-50 */
-  --color-brand-orange: #f59e0b; /* industrial amber-500 from design theme */
-  --color-brand-orange-hover: #d97706; /* industrial amber-600 from design theme */
+  --color-brand-900: #003366;
+  --color-brand-gold: #D4AF37;
 }
 
 /* Custom CSS Scrollbar and styling */
@@ -25,8 +17,8 @@ html {
 }
 
 body {
-  background-color: #fafafa;
-  color: #1e293b;
+  background-color: #FFFFFF;
+  color: #222222;
   overflow-x: hidden;
 }
 

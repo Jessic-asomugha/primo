@@ -1,168 +1,29 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-import React from 'react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import { COMPANY } from '../data';
 import { ActiveView } from '../types';
-import { Factory, ShieldCheck, Mail, Phone, MapPin, KeyRound } from 'lucide-react';
 
-interface FooterProps {
-  setView: (view: ActiveView) => void;
-  currentView: ActiveView;
-}
+interface FooterProps { setView: (view: ActiveView) => void; }
 
-export default function Footer({ setView, currentView }: FooterProps) {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer({ setView }: FooterProps) {
   return (
-    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
-      
-      {/* Top section: Info columns */}
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-          
-          {/* Logo & Corporate profile */}
-          <div className="md:col-span-5 flex flex-col gap-5">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-slate-800 flex items-center justify-center border border-slate-700">
-                <div className="w-4 h-4 border-2 border-white transform rotate-45"></div>
-              </div>
-              <div>
-                <span className="text-display block text-lg font-extrabold tracking-tight text-white uppercase">
-                  PRIMO
-                </span>
-              </div>
-            </div>
-            
-            <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              Primo is a premier European industrial fabricator and systems integrator. We deliver high-integrity mechanical structures, custom high-pressure hydraulics, and robotic process automation assemblies to leading operators globally.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4 text-[11px] font-mono tracking-wider uppercase text-slate-400">
-              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
-                <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
-                ISO 9001:2015
-              </span>
-              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
-                <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
-                EN 1090-2 (EXC3)
-              </span>
-              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
-                <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
-                ASME VIII COMPLIANT
-              </span>
-            </div>
+    <footer className="bg-brand-900 text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-14 sm:px-8 md:grid-cols-2 lg:px-12">
+        <div>
+          <h2 className="text-xl font-extrabold">{COMPANY.name}</h2>
+          <p className="mt-2 text-sm text-slate-300">{COMPANY.tagline}</p>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate-300">{COMPANY.about[0]}</p>
+        </div>
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-wider text-brand-gold">Contact Information</h2>
+          <div className="mt-4 space-y-3 text-sm text-slate-300">
+            <p className="flex gap-3"><MapPin className="h-5 w-5 shrink-0 text-brand-gold" />{COMPANY.address}</p>
+            <p className="flex gap-3"><Phone className="h-5 w-5 shrink-0 text-brand-gold" /><span><a className="hover:text-white" href={`tel:${COMPANY.phones[0]}`}>{COMPANY.phones[0]}</a><br /><a className="hover:text-white" href={`tel:${COMPANY.phones[1]}`}>{COMPANY.phones[1]}</a></span></p>
+            <p className="flex gap-3"><Mail className="h-5 w-5 shrink-0 text-brand-gold" /><a className="hover:text-white" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a></p>
           </div>
-
-          {/* Quick Nav Links */}
-          <div className="md:col-span-3 flex flex-col gap-4">
-            <h4 className="text-display text-xs font-bold uppercase tracking-widest text-white">
-              Corporate Directory
-            </h4>
-            <ul className="flex flex-col gap-2.5 text-sm">
-              <li>
-                <button
-                  onClick={() => setView(ActiveView.HOME)}
-                  className="hover:text-white transition-all text-left w-full"
-                  id="foot-link-home"
-                >
-                  Home Office Overview
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setView(ActiveView.ABOUT)}
-                  className="hover:text-white transition-all text-left w-full"
-                  id="foot-link-about"
-                >
-                  Mission, Values & FAQ
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setView(ActiveView.SERVICES)}
-                  className="hover:text-white transition-all text-left w-full"
-                  id="foot-link-services"
-                >
-                  Engineering Capabilities
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => setView(ActiveView.CONTACT)}
-                  className="hover:text-white transition-all text-left w-full"
-                  id="foot-link-contact"
-                >
-                  Initiate Project Brief
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Core Contact Info */}
-          <div className="md:col-span-4 flex flex-col gap-4">
-            <h4 className="text-display text-xs font-bold uppercase tracking-widest text-white">
-              Headquarters Info
-            </h4>
-            <div className="flex flex-col gap-3.5 text-sm text-slate-400">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-brand-orange shrink-0 mt-0.5" />
-                <span>
-                  720 Industrial Park Drive, Sector 12<br />
-                  Stuttgart, Baden-Württemberg, Germany
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-brand-orange shrink-0" />
-                <span>+49 (0) 711 988-2300</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 text-brand-orange shrink-0" />
-                <span>enquiries@primo-heavy.com</span>
-              </div>
-            </div>
-          </div>
-
+          <button onClick={() => setView(ActiveView.CONTACT)} className="mt-6 text-sm font-bold text-brand-gold hover:text-white">View business hours and contact status</button>
         </div>
       </div>
-
-      {/* Bottom bar */}
-      <div className="bg-slate-950/80 text-xs py-6 border-t border-slate-900/60">
-        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 font-medium">
-            &copy; {currentYear} Primo Heavy Systems GmbH. All engineering rights reserved.
-          </p>
-          
-          <div className="flex items-center gap-6">
-            <span className="text-slate-600 font-mono text-[10px]">
-              V2.1.0 // ENTERPRISE-GRADE
-            </span>
-            
-            {/* Admin Toggle button - secure portal link */}
-            <button
-              onClick={() => {
-                if (currentView === ActiveView.ADMIN_INBOX) {
-                  setView(ActiveView.HOME);
-                } else {
-                  setView(ActiveView.ADMIN_INBOX);
-                }
-              }}
-              className={`flex items-center gap-1.5 font-mono text-[10px] tracking-wide uppercase px-2 py-1 rounded transition-all ${
-                currentView === ActiveView.ADMIN_INBOX
-                  ? 'bg-orange-500/10 text-brand-orange border border-orange-500/30'
-                  : 'text-slate-500 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-900/40'
-              }`}
-              title="Secure submissions dashboard for Primo corporate staff"
-              id="btn-admin-portal"
-            >
-              <KeyRound className="h-3 w-3" />
-              {currentView === ActiveView.ADMIN_INBOX ? 'Close Portal' : 'Secure Portal'}
-            </button>
-          </div>
-        </div>
-      </div>
-
+      <div className="border-t border-white/15 px-6 py-5 text-center text-xs text-slate-400">© {new Date().getFullYear()} {COMPANY.name}. All rights reserved.</div>
     </footer>
   );
 }
