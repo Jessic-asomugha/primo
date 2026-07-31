@@ -79,7 +79,7 @@ export default function AboutView({ setView }: AboutViewProps) {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           
           <div className="flex flex-col gap-4 mb-16 max-w-xl">
-            <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-orange mb-2">// THE CAPELLA WAY</h2>
+            <h2 className="text-[10px] font-bold uppercase tracking-[0.3em] text-brand-orange mb-2">// THE PRIMO WAY</h2>
             <h3 className="text-3xl font-extrabold text-slate-900 tracking-tight">
               Our Core Values
             </h3>

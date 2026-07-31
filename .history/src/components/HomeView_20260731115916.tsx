@@ -30,10 +30,11 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ setView }: HomeViewProps) {
-  // We'll map the 3 custom services from SERVICES data
+  // We'll map the 4 custom services from SERVICES data
   const bulkDiesel = SERVICES.find(s => s.id === 'srv-1') || SERVICES[0];
-  const emergencyResponse = SERVICES.find(s => s.id === 'srv-2') || bulkDiesel;
-  const procurementLogistics = SERVICES.find(s => s.id === 'srv-3') || bulkDiesel;
+  const retailScheduled = SERVICES.find(s => s.id === 'srv-2') || bulkDiesel;
+  const emergencyResponse = SERVICES.find(s => s.id === 'srv-3') || bulkDiesel;
+  const logisticsDistribution = SERVICES.find(s => s.id === 'srv-4') || bulkDiesel;
 
   // State for expanded sector
   const [expandedSectorId, setExpandedSectorId] = useState<string | null>(null);
@@ -155,7 +156,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Service 1: Bulk Supply */}
             <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
@@ -184,7 +185,34 @@ export default function HomeView({ setView }: HomeViewProps) {
               </button>
             </div>
 
-            {/* Service 2: Emergency */}
+            {/* Service 2: Scheduled */}
+            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
+                  <Clock className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{retailScheduled.title}</h3>
+                <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Scheduled Fleet</span>
+                <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
+                  {retailScheduled.shortDescription}
+                </p>
+                <div className="border-t border-slate-100 pt-4 mb-4">
+                  <span className="text-[9px] font-mono text-slate-400 block mb-1">SOLVES PAIN POINT:</span>
+                  <span className="text-[10px] font-bold text-slate-800 flex items-center gap-1.5">
+                    <AlertTriangle className="h-3 w-3 text-brand-orange" />
+                    Adulterated diesel &amp; clogged injectors
+                  </span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setView(ActiveView.SERVICES)}
+                className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-orange transition-colors flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+              >
+                Specifications &rarr;
+              </button>
+            </div>
+
+            {/* Service 3: Emergency */}
             <div className="group bg-slate-950 text-white p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-2xl border-t-4 border-brand-orange duration-300 rounded-lg">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange text-slate-950 mb-6">
@@ -211,16 +239,16 @@ export default function HomeView({ setView }: HomeViewProps) {
               </button>
             </div>
 
-            {/* Service 3: Procurement & Logistics */}
+            {/* Service 4: Distribution Management */}
             <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
                   <TrendingUp className="h-6 w-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2">{procurementLogistics.title}</h3>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{logisticsDistribution.title}</h3>
                 <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Supply Automation</span>
                 <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
-                  {procurementLogistics.shortDescription}
+                  {logisticsDistribution.shortDescription}
                 </p>
                 <div className="border-t border-slate-100 pt-4 mb-4">
                   <span className="text-[9px] font-mono text-slate-400 block mb-1">SOLVES PAIN POINT:</span>

@@ -62,7 +62,7 @@ export const SERVICES: Service[] = [{
 }, {
   id: 'srv-3', title: 'Procurement & Logistics Support', slug: 'procurement-logistics-support', category: 'Integrated Business Solutions',
   shortDescription: 'Integrated procurement and logistics support tailored to corporate organisations, government institutions, and private businesses.',
-  fullDescription: 'Capella provides integrated solutions across procurement and logistics, shaped around each client\'s requirements.',
+  fullDescription: 'Capella provides integrated solutions across procurement and logistics, shaped around each client's requirements.',
   specifications: ['Requirements assessed per client', 'Areas covered: Abuja, Kaduna, Nasarawa, Niger State, and Kogi', 'International partnerships available upon request'],
   features: ['Experienced management', 'Professional workforce', 'Competitive pricing'], iconName: 'TrendingUp',
 }];

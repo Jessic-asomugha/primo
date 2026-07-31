@@ -30,10 +30,11 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ setView }: HomeViewProps) {
-  // We'll map the 3 custom services from SERVICES data
+  // We'll map the 4 custom services from SERVICES data
   const bulkDiesel = SERVICES.find(s => s.id === 'srv-1') || SERVICES[0];
-  const emergencyResponse = SERVICES.find(s => s.id === 'srv-2') || bulkDiesel;
-  const procurementLogistics = SERVICES.find(s => s.id === 'srv-3') || bulkDiesel;
+  const retailScheduled = SERVICES.find(s => s.id === 'srv-2') || bulkDiesel;
+  const emergencyResponse = SERVICES.find(s => s.id === 'srv-3') || bulkDiesel;
+  const logisticsDistribution = SERVICES.find(s => s.id === 'srv-4') || bulkDiesel;
 
   // State for expanded sector
   const [expandedSectorId, setExpandedSectorId] = useState<string | null>(null);
@@ -155,7 +156,7 @@ export default function HomeView({ setView }: HomeViewProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Service 1: Bulk Supply */}
             <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
@@ -184,7 +185,34 @@ export default function HomeView({ setView }: HomeViewProps) {
               </button>
             </div>
 
-            {/* Service 2: Emergency */}
+            {/* Service 2: Scheduled */}
+            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
+              <div>
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
+                  <Clock className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{retailScheduled.title}</h3>
+                <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Scheduled Fleet</span>
+                <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
+                  {retailScheduled.shortDescription}
+                </p>
+                <div className="border-t border-slate-100 pt-4 mb-4">
+                  <span className="text-[9px] font-mono text-slate-400 block mb-1">SOLVES PAIN POINT:</span>
+                  <span className="text-[10px] font-bold text-slate-800 flex items-center gap-1.5">
+                    <AlertTriangle className="h-3 w-3 text-brand-orange" />
+                    Adulterated diesel &amp; clogged injectors
+                  </span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setView(ActiveView.SERVICES)}
+                className="text-xs font-bold uppercase tracking-widest text-slate-900 hover:text-brand-orange transition-colors flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
+              >
+                Specifications &rarr;
+              </button>
+            </div>
+
+            {/* Service 3: Emergency */}
             <div className="group bg-slate-950 text-white p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-2xl border-t-4 border-brand-orange duration-300 rounded-lg">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange text-slate-950 mb-6">
@@ -211,16 +239,16 @@ export default function HomeView({ setView }: HomeViewProps) {
               </button>
             </div>
 
-            {/* Service 3: Procurement & Logistics */}
+            {/* Service 4: Distribution Management */}
             <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
               <div>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
                   <TrendingUp className="h-6 w-6" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 mb-2">{procurementLogistics.title}</h3>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{logisticsDistribution.title}</h3>
                 <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Supply Automation</span>
                 <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
-                  {procurementLogistics.shortDescription}
+                  {logisticsDistribution.shortDescription}
                 </p>
                 <div className="border-t border-slate-100 pt-4 mb-4">
                   <span className="text-[9px] font-mono text-slate-400 block mb-1">SOLVES PAIN POINT:</span>
@@ -257,7 +285,7 @@ export default function HomeView({ setView }: HomeViewProps) {
                 Guaranteed Fuel Purity. Zero Operational Downtime.
               </h2>
               <p className="text-slate-500 text-sm leading-relaxed font-light">
-                Industrial generators and heavy machinery breakdown instantly when fed adulterated, water-mixed, or dirty diesel. Capella enforces strict quality checks that protect your investment.
+                Industrial generators and heavy machinery breakdown instantly when fed adulterated, water-mixed, or dirty diesel. Primo enforces extreme compliance checks that protect your investment.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
@@ -324,38 +352,38 @@ export default function HomeView({ setView }: HomeViewProps) {
                 <div className="w-12 h-1.5 bg-brand-orange mb-6"></div>
                 
                 <h3 className="text-display text-lg font-bold tracking-tight text-white mb-2">
-                  Capella Company Credentials
+                  Primo National Fuel Credentials
                 </h3>
                 <p className="text-slate-400 text-xs font-light mb-6">
-                  Registered Nigerian company committed to quality service and reliable operations.
+                  Certified operations under the strict purview of the Nigerian Midstream and Downstream Petroleum Regulatory Authority (NMDPRA).
                 </p>
                 
                 <div className="space-y-4 text-xs font-mono">
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
-                    <span className="text-slate-400">Company Registration</span>
-                    <span className="text-white font-bold text-right">CAC Registered</span>
+                    <span className="text-slate-400">Regulatory Body</span>
+                    <span className="text-white font-bold text-right">NMDPRA</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
-                    <span className="text-slate-400">Year Established</span>
-                    <span className="text-brand-orange font-bold text-right">2024</span>
+                    <span className="text-slate-400">License Authority No.</span>
+                    <span className="text-brand-orange font-bold text-right">NMDPRA/AGO-DFL-2026</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
-                    <span className="text-slate-400">Service Coverage</span>
-                    <span className="text-white font-bold text-right">5 States</span>
+                    <span className="text-slate-400">Fuel Grade Standards</span>
+                    <span className="text-white font-bold text-right">NIS 554 Compliant (Low-Sulfur AGO)</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
-                    <span className="text-slate-400">Fuel Quality</span>
-                    <span className="text-white font-bold text-right">Purity Guaranteed</span>
+                    <span className="text-slate-400">Digital Flow Calibration</span>
+                    <span className="text-white font-bold text-right">DPR Certified Semi-Annually</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Service Type</span>
-                    <span className="text-emerald-400 font-bold text-right">Integrated Solutions</span>
+                    <span className="text-slate-400">Water PPM Threshold</span>
+                    <span className="text-emerald-400 font-bold text-right">&lt; 200 PPM Guarantee</span>
                   </div>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-slate-900 flex items-center gap-3 bg-slate-900/40 p-4 rounded text-[10px] text-slate-400">
                   <Lock className="h-4 w-4 text-brand-orange shrink-0" />
-                  <span>COMMITTED TO PROFESSIONAL SERVICE AND RELIABLE DELIVERY</span>
+                  <span>ALL CAPTAINS POSSESS INDEPENDENT HAULAGE SECURITY CREDENTIALS</span>
                 </div>
               </div>
             </div>
