@@ -80,7 +80,7 @@ export default function Header({ currentView, setView }: HeaderProps) {
             </button>
           )}
           <button
-            onClick={() => handleNavClick(ActiveView.CONTACT)}
+            onClick={() => handleNavClick(ActiveView.ENQUIRY)}
             className="px-6 py-2 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold uppercase tracking-widest transition-all active:scale-95"
             id="btn-nav-cta"
           >
@@ -124,7 +124,7 @@ export default function Header({ currentView, setView }: HeaderProps) {
             ))}
             <div className="border-t border-slate-100 pt-4 mt-2">
               <button
-                onClick={() => handleNavClick(ActiveView.CONTACT)}
+                onClick={() => handleNavClick(ActiveView.ENQUIRY)}
                 className="flex w-full items-center justify-center gap-2 bg-slate-900 py-3 text-center text-xs font-bold uppercase tracking-widest text-white transition-all hover:bg-brand-orange"
                 id="btn-nav-mob-cta"
               >

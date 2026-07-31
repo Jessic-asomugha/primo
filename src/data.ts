@@ -21,6 +21,24 @@ export const SERVICES: Service[] = [{
   fullDescription: 'Contact Capella Integrated Global Limited to discuss your requirements. Service description, specifications, and best-fit information will be published once confirmed by the client.',
   specifications: ['Service description pending client confirmation', 'Availability details pending client confirmation', 'Best-fit information pending client confirmation'],
   features: ['Registered Nigerian Company', 'Professional workforce', 'Reliable logistics', 'Customer-focused service'], iconName: 'Container',
+}, {
+  id: 'srv-2', title: 'Emergency Fuel Delivery on Request', slug: 'emergency-fuel-delivery', category: 'On-Request Support',
+  shortDescription: 'Emergency fuel delivery is available upon request for clients who need responsive supply support.',
+  fullDescription: 'Contact Capella to discuss emergency fuel delivery requirements, location, timing, and availability.',
+  specifications: ['Available upon request', 'Coverage and timing confirmed per enquiry', 'Contact details required for assessment'],
+  features: ['Reliable logistics', 'Customer-focused service', 'Professional workforce'], iconName: 'Clock',
+}, {
+  id: 'srv-3', title: 'Procurement & Logistics Support', slug: 'procurement-logistics-support', category: 'Integrated Business Solutions',
+  shortDescription: 'Integrated procurement and logistics support tailored to corporate organisations, government institutions, and private businesses.',
+  fullDescription: 'Capella provides integrated solutions across procurement and logistics, shaped around each client’s requirements.',
+  specifications: ['Requirements assessed per client', 'Areas covered: Abuja, Kaduna, Nasarawa, Niger State, and Kogi', 'International partnerships available upon request'],
+  features: ['Experienced management', 'Professional workforce', 'Competitive pricing'], iconName: 'TrendingUp',
+}, {
+  id: 'srv-4', title: 'Construction & General Contracting Support', slug: 'construction-general-contracting-support', category: 'Integrated Business Solutions',
+  shortDescription: 'Construction support and general contracting solutions for organisations with project-based requirements.',
+  fullDescription: 'Capella supports construction and general contracting requirements with a focus on quality service and dependable performance.',
+  specifications: ['Scope confirmed per project', 'Requirements assessed per client', 'Contact Capella to discuss your project'],
+  features: ['Integrity', 'Quality', 'Teamwork'], iconName: 'Wrench',
 }];
 export const TESTIMONIALS: Testimonial[] = [{ id: 't-1', quote: 'Capella Integrated Global delivers complete business solutions backed by professionalism, integrity, and timely execution.', author: 'Capella Integrated Global Limited', role: 'Our commitment', company: 'Integrated Solutions. Trusted Results.', rating: 5 }];
 export const VALUES: ValueItem[] = [

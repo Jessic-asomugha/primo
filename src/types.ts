@@ -8,6 +8,7 @@ export enum ActiveView {
   ABOUT = 'about',
   SERVICES = 'services',
   CONTACT = 'contact',
+  ENQUIRY = 'enquiry',
   ADMIN_INBOX = 'admin_inbox'
 }
 
