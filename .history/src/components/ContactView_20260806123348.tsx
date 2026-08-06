@@ -95,32 +95,27 @@ export default function ContactView({ selectedServiceInquiry, setSelectedService
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
       
-      {/* 1. INTRO HEADER */}
-      <section className="relative gradient-primary text-white py-24 border-b border-slate-800 overflow-hidden">
+      {/* 1. CINEMATIC INTRO HEADER */}
+      <section className="relative bg-slate-950 text-white py-24 border-b border-slate-900 overflow-hidden">
+        {/* Repeating diagonal grid pattern and subtle light leaks */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={ASSETS.whoWeServe}
-            alt="Capella Operations"
-            className="w-full h-full object-cover opacity-30 animate-float"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
-          <div className="absolute inset-0 industrial-pattern-dark opacity-20" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:24px_24px] opacity-15" />
+          <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-slate-900/40 via-transparent to-transparent" />
         </div>
         
         <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="max-w-3xl flex flex-col justify-center animate-fade-in-up">
-            {/* Animated orange bar highlight */}
-            <div className="w-20 h-1.5 bg-gradient-to-r from-brand-orange to-brand-accent mb-8 rounded-full animate-pulse-glow"></div>
+          <div className="max-w-3xl flex flex-col justify-center">
+            {/* Orange bar highlight */}
+            <div className="w-12 h-1.5 bg-brand-orange mb-6"></div>
 
-            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] gradient-text mb-3 block">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-brand-orange mb-3 block">
               ENGAGEMENT REGISTRY // DISPATCH INTAKE PROTOCOL
             </span>
             <h1 className="text-display text-4xl sm:text-5xl lg:text-5.5xl font-extrabold tracking-tight text-white leading-[1.1] mb-6">
               Get in Touch <br />
-              <span className="gradient-text">with Capella Integrated Global.</span>
+              <span className="text-slate-400">with Capella Integrated Global.</span>
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl font-light">
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl font-light">
               Contact Capella Integrated Global Limited to discuss your business requirements. A quote-request form can be configured when the client&apos;s preferred enquiry workflow is ready.
             </p>
           </div>

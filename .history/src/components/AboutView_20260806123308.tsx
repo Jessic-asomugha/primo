@@ -117,14 +117,13 @@ export default function AboutView({ setView }: AboutViewProps) {
 
 
       {/* 3. WHY CHOOSE US - CORPORATE HIGHLIGHTS */}
-      <section className="py-24 bg-gradient-to-b from-slate-100 to-white border-y border-slate-200 relative overflow-hidden">
-        <div className="absolute inset-0 industrial-pattern opacity-20"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <section className="py-24 bg-slate-100 border-y border-slate-200">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
-            <div className="flex flex-col gap-6 animate-fade-in-up">
-              <span className="text-xs font-mono uppercase tracking-widest gradient-text font-bold">// OPERATIONS MATRIX</span>
+            <div className="flex flex-col gap-6">
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-500 font-bold">// OPERATIONS MATRIX</span>
               <h2 className="text-display text-3xl font-bold tracking-tight text-slate-900 leading-tight">
                 Why Choose Capella.
               </h2>
@@ -150,7 +149,7 @@ export default function AboutView({ setView }: AboutViewProps) {
                     desc: 'Reliable logistics support timely execution across our areas of coverage.'
                   }
                 ].map((highlight, index) => (
-                  <div key={index} className="flex gap-4 p-4 rounded-xl bg-white border border-slate-200/60 shadow-sm card-hover">
+                  <div key={index} className="flex gap-4 p-4 rounded-lg bg-white border border-slate-200/60 shadow-sm">
                     {highlight.icon}
                     <div>
                       <h4 className="text-sm font-bold text-slate-900">{highlight.title}</h4>
@@ -161,43 +160,38 @@ export default function AboutView({ setView }: AboutViewProps) {
               </div>
             </div>
 
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl animate-slide-in-right">
-              <div className="relative h-80 md:h-96">
-                <img
-                  src={ASSETS.hero}
-                  alt="Capella Operations"
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="w-12 h-1.5 bg-gradient-to-r from-brand-orange to-brand-accent mb-4 rounded-full"></div>
-                  <h3 className="text-display text-xl font-bold tracking-tight text-white uppercase tracking-wider">
-                    COMPANY CREDENTIALS
-                  </h3>
-                  <p className="text-slate-300 text-xs leading-relaxed mb-4">
-                    Capella Integrated Global Limited is a registered Nigerian company committed to quality service and reliable operations.
-                  </p>
+            <div className="flex flex-col gap-6 bg-slate-900 text-white p-8 rounded-lg border border-slate-800 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <ShieldCheck className="h-44 w-44 text-brand-orange" />
+              </div>
 
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="p-3 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-700">
-                      <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">COMPANY REGISTRATION</span>
-                      <span className="font-semibold text-white block">CAC REGISTERED</span>
-                    </div>
-                    <div className="p-3 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-700">
-                      <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">YEAR ESTABLISHED</span>
-                      <span className="gradient-text font-bold block">2024</span>
-                    </div>
-                    <div className="p-3 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-700">
-                      <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">SERVICE COVERAGE</span>
-                      <span className="font-semibold text-white block">5 STATES</span>
-                    </div>
-                    <div className="p-3 rounded-lg bg-slate-950/80 backdrop-blur border border-slate-700">
-                      <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">SERVICE TYPE</span>
-                      <span className="font-semibold text-white block">INTEGRATED SOLUTIONS</span>
-                    </div>
-                  </div>
+              <h3 className="text-display text-lg font-bold tracking-tight text-white uppercase tracking-wider">
+                COMPANY CREDENTIALS
+              </h3>
+              <p className="text-slate-300 text-xs leading-relaxed">
+                Capella Integrated Global Limited is a registered Nigerian company committed to quality service and reliable operations.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mt-2 text-xs">
+                <div className="p-4 rounded bg-slate-950 border border-slate-800">
+                  <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">COMPANY REGISTRATION</span>
+                  <span className="font-semibold text-white block">CAC REGISTERED</span>
+                  <p className="text-[10px] text-slate-500 mt-1">Fully registered with Corporate Affairs Commission.</p>
+                </div>
+                <div className="p-4 rounded bg-slate-950 border border-slate-800">
+                  <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">YEAR ESTABLISHED</span>
+                  <span className="font-semibold text-white block">2024</span>
+                  <p className="text-[10px] text-slate-500 mt-1">Established to provide integrated business solutions.</p>
+                </div>
+                <div className="p-4 rounded bg-slate-950 border border-slate-800">
+                  <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">SERVICE COVERAGE</span>
+                  <span className="font-semibold text-white block">5 STATES</span>
+                  <p className="text-[10px] text-slate-500 mt-1">Abuja, Kaduna, Nasarawa, Niger State, and Kogi.</p>
+                </div>
+                <div className="p-4 rounded bg-slate-950 border border-slate-800">
+                  <span className="text-[10px] text-brand-orange font-mono font-bold block mb-1">SERVICE TYPE</span>
+                  <span className="font-semibold text-white block">INTEGRATED SOLUTIONS</span>
+                  <p className="text-[10px] text-slate-500 mt-1">Comprehensive business solutions for clients.</p>
                 </div>
               </div>
             </div>

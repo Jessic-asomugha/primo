@@ -318,37 +318,31 @@ export default function HomeView({ setView }: HomeViewProps) {
               </div>
             </div>
 
-            {/* Right side: Credentials Card with image and regulatory compliance details */}
-            <div className="lg:col-span-6 space-y-6 animate-slide-in-right">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <div className="relative h-64 md:h-80">
-                  <img
-                    src={ASSETS.telemetry}
-                    alt="Capella Operations"
-                    className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
-                  
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <div className="w-12 h-1.5 bg-gradient-to-r from-brand-orange to-brand-accent mb-4 rounded-full"></div>
-                    <h3 className="text-display text-xl font-bold tracking-tight text-white mb-2">
-                      Capella Company Credentials
-                    </h3>
-                    <p className="text-slate-300 text-xs font-light">
-                      Registered Nigerian company committed to quality service and reliable operations.
-                    </p>
-                  </div>
+            {/* Right side: Credentials Card with regulatory compliance details */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="p-8 bg-slate-950 rounded border border-slate-900 text-white relative overflow-hidden shadow-2xl">
+                {/* Background decorative watermark */}
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                  <Award className="h-40 w-40 text-white" />
                 </div>
                 
-                <div className="bg-slate-950 p-6 space-y-4 text-xs font-mono">
+                <div className="w-12 h-1.5 bg-brand-orange mb-6"></div>
+                
+                <h3 className="text-display text-lg font-bold tracking-tight text-white mb-2">
+                  Capella Company Credentials
+                </h3>
+                <p className="text-slate-400 text-xs font-light mb-6">
+                  Registered Nigerian company committed to quality service and reliable operations.
+                </p>
+                
+                <div className="space-y-4 text-xs font-mono">
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
                     <span className="text-slate-400">Company Registration</span>
                     <span className="text-white font-bold text-right">CAC Registered</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
                     <span className="text-slate-400">Year Established</span>
-                    <span className="gradient-text font-bold text-right">2024</span>
+                    <span className="text-brand-orange font-bold text-right">2024</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
                     <span className="text-slate-400">Service Coverage</span>
@@ -356,17 +350,17 @@ export default function HomeView({ setView }: HomeViewProps) {
                   </div>
                   <div className="flex justify-between items-center border-b border-slate-900 pb-3">
                     <span className="text-slate-400">Fuel Quality</span>
-                    <span className="text-emerald-400 font-bold text-right">Purity Guaranteed</span>
+                    <span className="text-white font-bold text-right">Purity Guaranteed</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-slate-400">Service Type</span>
-                    <span className="text-brand-orange font-bold text-right">Integrated Solutions</span>
+                    <span className="text-emerald-400 font-bold text-right">Integrated Solutions</span>
                   </div>
                 </div>
 
-                <div className="bg-slate-900/50 p-4 flex items-center gap-3 border-t border-slate-900">
+                <div className="mt-8 pt-6 border-t border-slate-900 flex items-center gap-3 bg-slate-900/40 p-4 rounded text-[10px] text-slate-400">
                   <Lock className="h-4 w-4 text-brand-orange shrink-0" />
-                  <span className="text-[10px] text-slate-400">COMMITTED TO PROFESSIONAL SERVICE AND RELIABLE DELIVERY</span>
+                  <span>COMMITTED TO PROFESSIONAL SERVICE AND RELIABLE DELIVERY</span>
                 </div>
               </div>
             </div>
