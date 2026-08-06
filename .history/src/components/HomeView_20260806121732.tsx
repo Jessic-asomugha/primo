@@ -432,37 +432,34 @@ export default function HomeView({ setView }: HomeViewProps) {
                 if (selectedSector.id === 'sec-4') IconComponent = Wrench;
 
                 return (
-                  <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-8 shadow-xl animate-fade-in relative overflow-hidden">
-                    <div className="absolute inset-0 industrial-pattern opacity-20"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-slate-950 to-slate-800 text-white shadow-lg">
-                          <IconComponent className="h-7 w-7 text-brand-orange" />
-                        </div>
-                        <div>
-                          <h3 className="text-display text-2xl font-bold text-slate-900">{selectedSector.title}</h3>
-                          <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">Industry Profile</p>
-                        </div>
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 animate-fade-in">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white">
+                        <IconComponent className="h-6 w-6 text-brand-orange" />
                       </div>
+                      <div>
+                        <h3 className="text-display text-2xl font-bold text-slate-900">{selectedSector.title}</h3>
+                        <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">Industry Profile</p>
+                      </div>
+                    </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h5 className="text-sm font-bold text-slate-900 mb-3">About {selectedSector.title}</h5>
-                          <p className="text-xs text-slate-600 leading-relaxed font-light">
-                            {selectedSector.fullDescription}
-                          </p>
-                        </div>
-                        {selectedSector.image && (
-                          <div className="relative h-48 md:h-56 rounded-xl overflow-hidden image-zoom shadow-lg">
-                            <img
-                              src={selectedSector.image}
-                              alt={selectedSector.title}
-                              className="w-full h-full object-cover"
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
-                        )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="text-sm font-bold text-slate-900 mb-3">About {selectedSector.title}</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed font-light">
+                          {selectedSector.fullDescription}
+                        </p>
                       </div>
+                      {selectedSector.image && (
+                        <div className="relative h-48 md:h-56 rounded-lg overflow-hidden">
+                          <img
+                            src={selectedSector.image}
+                            alt={selectedSector.title}
+                            className="w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 );

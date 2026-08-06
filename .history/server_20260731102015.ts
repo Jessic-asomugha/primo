@@ -8,7 +8,7 @@ import path from 'path';
 
 async function startServer() {
   const app = express();
-  const PORT = 3001;
+  const PORT = 3000;
 
   // Dev server with Vite vs Production static asset handler
   if (process.env.NODE_ENV !== 'production') {

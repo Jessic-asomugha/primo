@@ -81,7 +81,7 @@ export default function Header({ currentView, setView }: HeaderProps) {
           )}
           <button
             onClick={() => handleNavClick(ActiveView.ENQUIRY)}
-            className="btn-primary px-6 py-2.5 text-slate-950 text-xs font-bold uppercase tracking-widest rounded-lg shadow-lg"
+            className="px-6 py-2 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold uppercase tracking-widest transition-all active:scale-95"
             id="btn-nav-cta"
           >
             Enquire Now

@@ -182,7 +182,7 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
           </div>
 
           {/* Horizontal Card Deck */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {SERVICES.map((srv) => {
               const isActive = srv.id === activeTabId;
               const serviceImg = getServiceImage(srv.id);
@@ -191,36 +191,36 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
                 <button
                   key={srv.id}
                   onClick={() => setActiveTabId(srv.id)}
-                  className={`group flex flex-col overflow-hidden rounded-2xl text-left transition-all duration-300 cursor-pointer card-hover ${
+                  className={`group flex flex-col overflow-hidden rounded-xl border text-left transition-all duration-300 bg-white cursor-pointer ${
                     isActive
-                      ? 'border-brand-orange ring-2 ring-brand-orange/30 shadow-2xl bg-gradient-to-br from-white to-slate-50'
-                      : 'border-slate-200/80 hover:border-brand-orange/50 bg-white shadow-lg'
+                      ? 'border-brand-orange ring-2 ring-brand-orange/25 shadow-lg'
+                      : 'border-slate-200/80 hover:border-slate-300 hover:shadow-md'
                   }`}
                   id={`btn-service-tab-${srv.id}`}
                 >
                   {/* Image container */}
-                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 border-b border-slate-100 image-zoom">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 border-b border-slate-100">
                     <img
                       src={serviceImg}
                       alt={srv.title}
                       referrerPolicy="no-referrer"
-                      className="h-full w-full object-cover transition-transform duration-500"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     {/* Pulsing indicator if active */}
                     {isActive && (
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-brand-orange to-brand-accent text-slate-950 font-bold px-3 py-1 rounded-full text-[8px] tracking-wider uppercase font-mono shadow-lg animate-pulse-glow">
+                      <div className="absolute top-3 right-3 bg-brand-orange text-slate-950 font-bold px-2 py-0.5 rounded text-[8px] tracking-wider uppercase font-mono shadow animate-pulse">
                         Active Specs
                       </div>
                     )}
                   </div>
 
                   {/* Card textual info */}
-                  <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <span className="text-[10px] gradient-text font-bold font-mono uppercase tracking-widest block mb-1">
+                      <span className="text-[10px] text-brand-orange font-bold font-mono uppercase tracking-widest block mb-1">
                         {srv.category}
                       </span>
-                      <h4 className="text-base font-bold text-slate-950 tracking-tight leading-snug">
+                      <h4 className="text-sm font-bold text-slate-950 tracking-tight leading-snug">
                         {srv.title}
                       </h4>
                       <p className="text-xs text-slate-500 font-light mt-2 line-clamp-3 leading-relaxed">
@@ -229,7 +229,7 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
                     </div>
 
                     {/* Bottom visual cues */}
-                    <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <div className="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between">
                       <span className="text-[9px] font-mono font-bold text-slate-400">
                         {srv.id.toUpperCase()}
                       </span>
@@ -246,12 +246,11 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
           </div>
 
           {/* Active Service Detailed Display Panel - Spans full width right below */}
-          <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-6 md:p-10 shadow-xl flex flex-col gap-8 min-h-[420px] transition-all duration-300 animate-fade-in relative overflow-hidden">
-            <div className="absolute inset-0 industrial-pattern opacity-20"></div>
-            <div className="relative z-10">
+          <div className="bg-white border border-slate-200 rounded-xl p-6 md:p-10 shadow-sm flex flex-col gap-8 min-h-[420px] transition-all duration-300 animate-fade-in">
+            
             {/* Meta details & title */}
             <div className="flex flex-col gap-3 pb-6 border-b border-slate-100">
-              <div className="inline-flex w-max items-center gap-2 rounded-full bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 px-4 py-1.5 text-xs font-mono text-brand-orange font-bold uppercase shadow-sm">
+              <div className="inline-flex w-max items-center gap-2 rounded-full bg-orange-50 border border-orange-100 px-3 py-1 text-xs font-mono text-brand-orange font-bold uppercase">
                 {activeService.category} COMPLIANCE GUARANTEE
               </div>
               
@@ -307,13 +306,12 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
               
               <button
                 onClick={() => handleServiceInquiry(activeService.title)}
-                className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2 rounded text-slate-950 px-6 py-3.5 text-xs font-bold tracking-wide uppercase shadow-lg"
+                className="group w-full sm:w-auto flex items-center justify-center gap-2 rounded bg-slate-900 hover:bg-brand-orange text-white hover:text-slate-950 px-6 py-3.5 text-xs font-bold tracking-wide uppercase transition-all cursor-pointer"
                 id="btn-service-inquiry-cta"
               >
                 Inquire About This Service
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
-            </div>
             </div>
 
           </div>
@@ -323,9 +321,8 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
 
 
       {/* 4. FINAL CONTRACT CTA */}
-      <section className="gradient-primary text-white py-20 border-t border-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 industrial-pattern-dark opacity-30"></div>
-        <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center flex flex-col items-center gap-5 animate-fade-in-up">
+      <section className="bg-slate-900 text-white py-16 border-t border-slate-800">
+        <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center flex flex-col items-center gap-5">
           <h2 className="text-display text-2xl sm:text-3xl font-extrabold tracking-tight">
             Discuss Your Business Requirements.
           </h2>
@@ -334,11 +331,11 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
           </p>
           <button
             onClick={() => setView(ActiveView.CONTACT)}
-            className="btn-primary group flex items-center gap-2 rounded text-slate-950 px-8 py-4 text-sm font-extrabold uppercase tracking-widest shadow-xl mt-4"
+            className="group flex items-center gap-2 rounded bg-brand-orange hover:bg-brand-orange-hover px-6 py-3 text-sm font-extrabold text-slate-950 transition-all hover:shadow-lg mt-2 cursor-pointer"
             id="services-btn-cta"
           >
             Request a Fuel Quote
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-slate-950" />
           </button>
         </div>
       </section>

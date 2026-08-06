@@ -16,18 +16,17 @@ export default function Footer({ setView, currentView }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="gradient-primary text-slate-300 border-t border-slate-800 relative overflow-hidden">
-      <div className="absolute inset-0 industrial-pattern-dark opacity-30"></div>
+    <footer className="bg-slate-900 text-slate-300 border-t border-slate-800">
       
       {/* Top section: Info columns */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           
           {/* Logo & Corporate profile */}
           <div className="md:col-span-5 flex flex-col gap-5">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border border-slate-700 rounded-xl shadow-lg">
-                <div className="w-5 h-5 border-2 border-white transform rotate-45"></div>
+              <div className="w-8 h-8 bg-slate-800 flex items-center justify-center border border-slate-700">
+                <div className="w-4 h-4 border-2 border-white transform rotate-45"></div>
               </div>
               <div>
                 <span className="text-display block text-lg font-extrabold tracking-tight text-white uppercase">
@@ -41,15 +40,15 @@ export default function Footer({ setView, currentView }: FooterProps) {
             </p>
 
             <div className="flex flex-wrap items-center gap-4 text-[11px] font-mono tracking-wider uppercase text-slate-400">
-              <span className="flex items-center gap-1.5 border border-slate-700 rounded-lg bg-slate-950/50 px-3 py-1.5 glass-dark">
+              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
                 <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
                 REGISTERED NIGERIAN COMPANY
               </span>
-              <span className="flex items-center gap-1.5 border border-slate-700 rounded-lg bg-slate-950/50 px-3 py-1.5 glass-dark">
+              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
                 <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
                 PROFESSIONAL WORKFORCE
               </span>
-              <span className="flex items-center gap-1.5 border border-slate-700 rounded-lg bg-slate-950/50 px-3 py-1.5 glass-dark">
+              <span className="flex items-center gap-1.5 border border-slate-800 rounded bg-slate-950 px-2 py-1">
                 <ShieldCheck className="h-3.5 w-3.5 text-brand-orange" />
                 RELIABLE LOGISTICS
               </span>
@@ -58,14 +57,14 @@ export default function Footer({ setView, currentView }: FooterProps) {
 
           {/* Quick Nav Links */}
           <div className="md:col-span-3 flex flex-col gap-4">
-            <h4 className="text-display text-xs font-bold uppercase tracking-widest gradient-text">
+            <h4 className="text-display text-xs font-bold uppercase tracking-widest text-white">
               Corporate Directory
             </h4>
             <ul className="flex flex-col gap-2.5 text-sm">
               <li>
                 <button
                   onClick={() => setView(ActiveView.HOME)}
-                  className="hover:text-white transition-all text-left w-full hover:bg-slate-800/50 px-2 py-1 rounded-lg"
+                  className="hover:text-white transition-all text-left w-full"
                   id="foot-link-home"
                 >
                   Home Office Overview
@@ -74,7 +73,7 @@ export default function Footer({ setView, currentView }: FooterProps) {
               <li>
                 <button
                   onClick={() => setView(ActiveView.ABOUT)}
-                  className="hover:text-white transition-all text-left w-full hover:bg-slate-800/50 px-2 py-1 rounded-lg"
+                  className="hover:text-white transition-all text-left w-full"
                   id="foot-link-about"
                 >
                   Mission, Values & FAQ
@@ -83,7 +82,7 @@ export default function Footer({ setView, currentView }: FooterProps) {
               <li>
                 <button
                   onClick={() => setView(ActiveView.SERVICES)}
-                  className="hover:text-white transition-all text-left w-full hover:bg-slate-800/50 px-2 py-1 rounded-lg"
+                  className="hover:text-white transition-all text-left w-full"
                   id="foot-link-services"
                 >
                   Engineering Capabilities
@@ -92,7 +91,7 @@ export default function Footer({ setView, currentView }: FooterProps) {
               <li>
                 <button
                   onClick={() => setView(ActiveView.CONTACT)}
-                  className="hover:text-white transition-all text-left w-full hover:bg-slate-800/50 px-2 py-1 rounded-lg"
+                  className="hover:text-white transition-all text-left w-full"
                   id="foot-link-contact"
                 >
                   Initiate Project Brief
@@ -103,22 +102,22 @@ export default function Footer({ setView, currentView }: FooterProps) {
 
           {/* Core Contact Info */}
           <div className="md:col-span-4 flex flex-col gap-4">
-            <h4 className="text-display text-xs font-bold uppercase tracking-widest gradient-text">
+            <h4 className="text-display text-xs font-bold uppercase tracking-widest text-white">
               Headquarters Info
             </h4>
             <div className="flex flex-col gap-3.5 text-sm text-slate-400">
-              <div className="flex items-start gap-3 p-3 rounded-lg bg-slate-950/30 border border-slate-800 glass-dark">
+              <div className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-brand-orange shrink-0 mt-0.5" />
                 <span>
                   Plot 471, behind Banilux Motors<br />
                   FCT, Abuja
                 </span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-950/30 border border-slate-800 glass-dark">
+              <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-brand-orange shrink-0" />
                 <span>07062062322 / 09048486637</span>
               </div>
-              <div className="flex items-center gap-3 p-3 rounded-lg bg-slate-950/30 border border-slate-800 glass-dark">
+              <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-brand-orange shrink-0" />
                 <span>info@capella.com.ng</span>
               </div>
@@ -129,7 +128,7 @@ export default function Footer({ setView, currentView }: FooterProps) {
       </div>
 
       {/* Bottom bar */}
-      <div className="relative z-10 bg-slate-950/80 text-xs py-6 border-t border-slate-900/60">
+      <div className="bg-slate-950/80 text-xs py-6 border-t border-slate-900/60">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 font-medium">
             &copy; {currentYear} Capella Integrated Global Limited. All rights reserved.
@@ -149,10 +148,10 @@ export default function Footer({ setView, currentView }: FooterProps) {
                   setView(ActiveView.ADMIN_INBOX);
                 }
               }}
-              className={`flex items-center gap-1.5 font-mono text-[10px] tracking-wide uppercase px-3 py-1.5 rounded-lg transition-all ${
+              className={`flex items-center gap-1.5 font-mono text-[10px] tracking-wide uppercase px-2 py-1 rounded transition-all ${
                 currentView === ActiveView.ADMIN_INBOX
-                  ? 'bg-brand-orange/10 text-brand-orange border border-brand-orange/30'
-                  : 'text-slate-500 hover:text-white border border-slate-700 hover:border-slate-600 bg-slate-900/40 glass-dark'
+                  ? 'bg-orange-500/10 text-brand-orange border border-orange-500/30'
+                  : 'text-slate-500 hover:text-white border border-slate-800 hover:border-slate-700 bg-slate-900/40'
               }`}
               title="Secure submissions dashboard for Primo corporate staff"
               id="btn-admin-portal"

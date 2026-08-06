@@ -323,9 +323,8 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
 
 
       {/* 4. FINAL CONTRACT CTA */}
-      <section className="gradient-primary text-white py-20 border-t border-slate-800 relative overflow-hidden">
-        <div className="absolute inset-0 industrial-pattern-dark opacity-30"></div>
-        <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center flex flex-col items-center gap-5 animate-fade-in-up">
+      <section className="bg-slate-900 text-white py-16 border-t border-slate-800">
+        <div className="mx-auto max-w-4xl px-6 sm:px-8 lg:px-12 text-center flex flex-col items-center gap-5">
           <h2 className="text-display text-2xl sm:text-3xl font-extrabold tracking-tight">
             Discuss Your Business Requirements.
           </h2>
@@ -334,11 +333,11 @@ export default function ServicesView({ setView, setSelectedServiceInquiry }: Ser
           </p>
           <button
             onClick={() => setView(ActiveView.CONTACT)}
-            className="btn-primary group flex items-center gap-2 rounded text-slate-950 px-8 py-4 text-sm font-extrabold uppercase tracking-widest shadow-xl mt-4"
+            className="group flex items-center gap-2 rounded bg-brand-orange hover:bg-brand-orange-hover px-6 py-3 text-sm font-extrabold text-slate-950 transition-all hover:shadow-lg mt-2 cursor-pointer"
             id="services-btn-cta"
           >
             Request a Fuel Quote
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 text-slate-950" />
           </button>
         </div>
       </section>

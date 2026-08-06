@@ -141,13 +141,12 @@ export default function HomeView({ setView }: HomeViewProps) {
       </section>
 
       {/* 3. CORE SERVICES SECTION (With Real Pain Points Grounding) */}
-      <section className="py-24 bg-gradient-to-b from-white to-slate-50 border-b border-slate-100 relative overflow-hidden">
-        <div className="absolute inset-0 industrial-pattern opacity-30"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+      <section className="py-24 bg-white border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 max-w-5xl animate-fade-in-up">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 max-w-5xl">
             <div className="max-w-2xl">
-              <span className="text-[10px] font-mono uppercase tracking-[0.3em] gradient-text font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-brand-orange font-bold">
                 // SYSTEM CAPABILITIES
               </span>
               <h2 className="text-display text-3xl sm:text-4.5xl font-extrabold tracking-tight text-slate-900 mt-2 leading-[1.15]">
@@ -159,16 +158,16 @@ export default function HomeView({ setView }: HomeViewProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             {/* Service 1: Bulk Supply */}
-            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between card-hover rounded-xl shadow-lg animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
               <div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-slate-950 to-slate-800 text-white mb-6 group-hover:from-brand-orange group-hover:to-brand-accent group-hover:text-slate-950 transition-all duration-300 shadow-lg">
-                  <Container className="h-7 w-7" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
+                  <Container className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{bulkDiesel.title}</h3>
-                <span className="text-[9px] font-mono bg-gradient-to-r from-slate-100 to-slate-200 text-slate-600 px-3 py-1 rounded-full uppercase font-semibold">Bulk Logistics</span>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{bulkDiesel.title}</h3>
+                <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Bulk Logistics</span>
                 <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
                   {bulkDiesel.shortDescription}
                 </p>
@@ -189,17 +188,17 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Service 2: Emergency */}
-            <div className="group bg-gradient-to-br from-slate-950 to-slate-800 text-white p-8 flex flex-col justify-between card-hover rounded-xl shadow-2xl border border-brand-orange/30 animate-fade-in-up animate-pulse-glow" style={{animationDelay: '0.2s'}}>
+            <div className="group bg-slate-950 text-white p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-2xl border-t-4 border-brand-orange duration-300 rounded-lg">
               <div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-brand-orange to-brand-accent text-slate-950 mb-6 shadow-xl">
-                  <Activity className="h-7 w-7" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-orange text-slate-950 mb-6">
+                  <Activity className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{emergencyResponse.title}</h3>
-                <span className="text-[9px] font-mono bg-slate-900 text-brand-orange px-3 py-1 rounded-full uppercase font-semibold">Priority 24/7 SLA</span>
+                <h3 className="text-base font-bold text-white mb-2">{emergencyResponse.title}</h3>
+                <span className="text-[9px] font-mono bg-slate-900 text-brand-orange px-2 py-0.5 rounded uppercase font-semibold">Priority 24/7 SLA</span>
                 <p className="text-slate-400 text-xs leading-relaxed mt-4 mb-6 font-light">
                   {emergencyResponse.shortDescription}
                 </p>
-                <div className="border-t border-slate-700 pt-4 mb-4">
+                <div className="border-t border-slate-900 pt-4 mb-4">
                   <span className="text-[9px] font-mono text-slate-500 block mb-1">SOLVES PAIN POINT:</span>
                   <span className="text-[10px] font-bold text-slate-200 flex items-center gap-1.5">
                     <AlertTriangle className="h-3 w-3 text-brand-orange animate-pulse" />
@@ -216,13 +215,13 @@ export default function HomeView({ setView }: HomeViewProps) {
             </div>
 
             {/* Service 3: Procurement & Logistics */}
-            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between card-hover rounded-xl shadow-lg animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+            <div className="group bg-white border border-slate-200/80 p-8 flex flex-col justify-between transition-all hover:-translate-y-1 hover:shadow-lg hover:border-brand-orange duration-300 rounded-lg shadow-sm">
               <div>
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-slate-950 to-slate-800 text-white mb-6 group-hover:from-brand-orange group-hover:to-brand-accent group-hover:text-slate-950 transition-all duration-300 shadow-lg">
-                  <TrendingUp className="h-7 w-7" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white mb-6 group-hover:bg-brand-orange group-hover:text-slate-950 transition-colors">
+                  <TrendingUp className="h-6 w-6" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{procurementLogistics.title}</h3>
-                <span className="text-[9px] font-mono bg-gradient-to-r from-slate-100 to-slate-200 text-slate-600 px-3 py-1 rounded-full uppercase font-semibold">Supply Automation</span>
+                <h3 className="text-base font-bold text-slate-900 mb-2">{procurementLogistics.title}</h3>
+                <span className="text-[9px] font-mono bg-slate-100 text-slate-600 px-2 py-0.5 rounded uppercase font-semibold">Supply Automation</span>
                 <p className="text-slate-500 text-xs leading-relaxed mt-4 mb-6 font-light">
                   {procurementLogistics.shortDescription}
                 </p>
@@ -400,16 +399,16 @@ export default function HomeView({ setView }: HomeViewProps) {
                   <button
                     key={sector.id}
                     onClick={() => setExpandedSectorId(sector.id)}
-                    className={`flex gap-4 p-5 rounded-xl transition-all duration-300 text-left border card-hover ${
+                    className={`flex gap-4 p-5 rounded-lg transition-all duration-200 text-left border ${
                       isSelected 
-                        ? 'bg-gradient-to-br from-slate-950 to-slate-800 text-white border-brand-orange shadow-xl' 
-                        : 'bg-white text-slate-900 border-slate-200 hover:border-brand-orange/50 hover:shadow-md'
+                        ? 'bg-slate-950 text-white border-slate-950' 
+                        : 'bg-slate-50 text-slate-900 border-slate-200 hover:bg-slate-100/50 hover:border-slate-300'
                     }`}
                   >
-                    <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-lg ${
-                      isSelected ? 'bg-gradient-to-br from-brand-orange to-brand-accent text-slate-950' : 'bg-gradient-to-br from-slate-950 to-slate-800 text-white'
+                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded ${
+                      isSelected ? 'bg-brand-orange text-slate-950' : 'bg-slate-950 text-white'
                     }`}>
-                      <IconComponent className="h-6 w-6" />
+                      <IconComponent className="h-5 w-5" />
                     </div>
                     <div className="flex-1">
                       <h4 className={`text-sm font-bold ${isSelected ? 'text-white' : 'text-slate-900'}`}>{sector.title}</h4>
@@ -432,37 +431,34 @@ export default function HomeView({ setView }: HomeViewProps) {
                 if (selectedSector.id === 'sec-4') IconComponent = Wrench;
 
                 return (
-                  <div className="bg-gradient-to-br from-white to-slate-50 border border-slate-200 rounded-2xl p-8 shadow-xl animate-fade-in relative overflow-hidden">
-                    <div className="absolute inset-0 industrial-pattern opacity-20"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-slate-950 to-slate-800 text-white shadow-lg">
-                          <IconComponent className="h-7 w-7 text-brand-orange" />
-                        </div>
-                        <div>
-                          <h3 className="text-display text-2xl font-bold text-slate-900">{selectedSector.title}</h3>
-                          <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">Industry Profile</p>
-                        </div>
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 animate-fade-in">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-950 text-white">
+                        <IconComponent className="h-6 w-6 text-brand-orange" />
                       </div>
+                      <div>
+                        <h3 className="text-display text-2xl font-bold text-slate-900">{selectedSector.title}</h3>
+                        <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">Industry Profile</p>
+                      </div>
+                    </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h5 className="text-sm font-bold text-slate-900 mb-3">About {selectedSector.title}</h5>
-                          <p className="text-xs text-slate-600 leading-relaxed font-light">
-                            {selectedSector.fullDescription}
-                          </p>
-                        </div>
-                        {selectedSector.image && (
-                          <div className="relative h-48 md:h-56 rounded-xl overflow-hidden image-zoom shadow-lg">
-                            <img
-                              src={selectedSector.image}
-                              alt={selectedSector.title}
-                              className="w-full h-full object-cover"
-                              referrerPolicy="no-referrer"
-                            />
-                          </div>
-                        )}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h5 className="text-sm font-bold text-slate-900 mb-3">About {selectedSector.title}</h5>
+                        <p className="text-xs text-slate-600 leading-relaxed font-light">
+                          {selectedSector.fullDescription}
+                        </p>
                       </div>
+                      {selectedSector.image && (
+                        <div className="relative h-48 md:h-56 rounded-lg overflow-hidden">
+                          <img
+                            src={selectedSector.image}
+                            alt={selectedSector.title}
+                            className="w-full h-full object-cover"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
